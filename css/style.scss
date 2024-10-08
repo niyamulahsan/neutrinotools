@@ -1,0 +1,286 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Lobster+Two|Montserrat|Roboto&display=swap');
+.font-montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+.font-lobster{
+  font-family: 'Lobster Two', cursive;
+}
+.font-greatvibes{
+  font-family: 'Great Vibes', cursive;
+}
+.font-roboto{
+  font-family: 'Roboto', sans-serif;
+}
+
+/* bootstrap 4 basic color */
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+/* custom color*/
+$c-primary: #2B4DF7;
+$c-hover-primary: #2441ce;
+$c-dark: #1C1C1C;
+$c-light-dark: #252525;
+$c-bodyback: #222222;
+
+/* dependant variable */
+$sizer: 1rem;
+
+/* universal css for all page */
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: $c-bodyback;
+}
+.wrapper{
+  position: relative;
+  height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+}
+.fa-nav{
+  font-size: 16pt;
+}
+.fz-0{
+  /* custom built in font size */
+  font-size: $sizer * .8;
+}
+.fz-1{
+  /* custom built in font size */
+  font-size: $sizer * 4;
+}
+.fz-2{
+  /* custom built in font size */
+  font-size: $sizer * 5;
+}
+.fz-3{
+  /* custom built in font size */
+  font-size: $sizer * 6;
+}
+.fz-4{
+  /* custom built in font size */
+  font-size: $sizer * 7;
+}
+.fz-5{
+  /* custom built in font size */
+  font-size: $sizer * 8;
+}
+.fz-auto{ 
+  /* custom built in font size */
+  font-size: 100%;
+}
+.bg-primary{
+  background-color: $c-primary;
+}
+.btn-primary{
+  border-color: $c-primary;
+}
+.btn-primary:hover{
+  border-color: $c-hover-primary !important;
+  background-color: $c-hover-primary !important;
+}
+.pointer-events-none{
+  pointer-events: none;
+}
+.scroll-top{
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 10000;
+  padding: 6px 13px;
+  box-shadow: none !important;
+  border-radius: 10rem;
+}
+.on{
+  display: block !important;
+  transition: all .3s ease-in-out;
+}
+
+/* home content css */
+header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  // background: red;
+  width: 100%;
+  z-index: 10001;
+  transition: all .1s ease-in-out;
+}
+header.scroll{
+  box-shadow: 10px 0 10px $c-primary;
+  transition: all .1s ease-in-out;
+  background: $c-primary;
+  .navbar a{
+    color: $white !important;
+  }
+}
+.slider{
+  li[data-target="#carouselExampleIndicators"]{
+    margin-bottom: -7.5px;
+  }
+}
+.title-border{
+  width: 50px;
+  padding: 2px;
+  background: $c-primary;
+}
+.banner{
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url("/images/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  // background: red;
+}
+.footer-nav{
+  ul li{
+    margin-right: 0 !important;
+    margin-left: -5px;
+  }
+  ul li+li::before{
+    content: "|";
+    padding: 0 5px;
+    color: $white !important;
+  }
+}
+
+/* login popup & panel*/
+.login-popup{
+  position: fixed;
+  right: 15px;
+  bottom: 60px;
+  z-index: 10000;
+  padding: 6px 10px;
+  border-radius: 10rem;
+}
+.login-panel{
+  position: relative;
+  background: $dark;
+  position: fixed;
+  right: 20px;
+  bottom: 145px;
+  border-radius: 16px 16px 0 16px;
+  display: none;
+  input{
+    width: 50%;
+    font-size: 13pt;
+    padding: 30px 15px;
+    float: left;
+  }
+  #email{
+    border-left: 1px solid $c-primary;
+    border-top: 1px solid $c-primary;
+    border-right: 1px solid $c-primary;
+    border-top-left-radius: 15px !important;
+  }
+  #password{
+    border-top: 1px solid $c-primary;
+    border-right: 1px solid $c-primary;
+    border-top-right-radius: 15px !important;
+  }
+  button{
+    font-size: 15pt;
+    width: 100%;
+    border: 1px solid $c-primary;
+    padding: 15px;
+    border-radius: 0 0 15px 15px !important;
+  }
+  .forget{
+    position: absolute;
+    bottom: -32px;
+    right: 0;
+    background: $dark;
+    border-radius: 0 0 0 15px;
+  }
+}
+.login-panel::after{
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-top: 15px solid $dark;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  right: 0;
+  bottom: -47px;
+}
+
+/* login page css */
+.login{
+  padding: 8.2% 0;
+  background: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url("/images/laptop-3174729_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  input{
+    width: 50%;
+    font-size: 13pt;
+    padding: 30px 15px;
+    float: left;
+  }
+  #email{
+    border-left: 1px solid $c-primary;
+    border-top: 1px solid $c-primary;
+    border-right: 1px solid $c-primary;
+    border-top-left-radius: 15px !important;
+  }
+  #password{
+    border-top: 1px solid $c-primary;
+    border-right: 1px solid $c-primary;
+    border-top-right-radius: 15px !important;
+  }
+  button{
+    font-size: 15pt;
+    width: 100%;
+    border: 1px solid $c-primary;
+    padding: 15px;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+  }
+  .cbtngrp{
+    clear: both;
+  }
+}
+
+/*-----------------------@media 767px max-------------------*/
+@media(max-width: 767px){
+  header{
+    // background: $blue;
+    .navbar{
+      padding: 0;
+    }
+    .navbar ul{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li a{
+        color: $light;
+      }
+    }
+  }
+}
